@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\MultiTable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Tenant extends Model
 {
-    use HasFactory;
+    use HasFactory, MultiTable;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'table_name'];
 
 
     public function users(){
